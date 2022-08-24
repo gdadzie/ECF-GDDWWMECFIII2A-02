@@ -1,53 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
 
-body{
-   
+.body{
+    font-family: Lato;
+    font-weight: 300;
+    position: relative;
+    height: 100vh;
+    color: #555;
+    
 }
+
 
 .interfaceGame{
-    margin-top: 50px;
+
+    position: absolute;
+    top:200px;
+    left:100px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    width: 600px;
-    height: 550px;
-}
-
-.interfacePlayers{
-    height: 100%;
-}
-
-.active{
-    background-color: rgb(234, 233, 233);
-}
-.winner{
-    content: 'WINNER !';
-    color:  rgb(200, 57, 57);
-
-}
-
-.current{
-    background-color: rgb(200, 57, 57);
-    width: auto;
+    height: 600px;
     
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: #222;
-
+    animation: 1s linear 1s slidein;
+    
 }
+
+.interfacePlayers{height: 100%;}
+
+.active{background-color: rgb(234, 233, 233);}
+
+.active .players-title { font-weight: 300; }
+
+.players-title { font-size:30px; font-weight: 100; text-transform:uppercase; }
+
+.winner{
+    color:  rgb(227, 65, 65);
+    animation-duration: 2s;
+    animation-name: fadeInOut, moveLeft300px, bounce;
+    animation-duration: 2.5s, 5s, 1s;
+    animation-iteration-count: 2, 1, 5;
+  }
+
+.currentTitle{text-transform: uppercase;margin-bottom: 10px;font-size: 12px;color: #222;}
+
+.current-content{background-color: rgb(227, 65, 65);
+    color: #fff;
+    width: 100px;
+    margin: 0 auto;
+    padding: 5px;
+    
+}
+
 
 button {
+
     position: absolute;
     width: 200px;
     left: 50%;
     transform: translateX(-50%);
-    color: #555;
+    color: rgb(19, 18, 18);
     background: none;
     border: none;
     font-family: Lato;
     font-size: 20px;
-    text-transform: uppercase;
-    cursor: pointer;
     font-weight: 300;
-    transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover { font-weight: 600; }
@@ -56,25 +69,23 @@ button:hover i { margin-right: 20px; }
 button:focus {
     outline: none;
 }
-#btnHold,#btnRollDice,.diceDisplay{
-    position: absolute;
-}
+
 .diceDisplay{
-    top: 100px;
-    left:400px
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
+    
 }
 
-#btnRollDice{ 
+.btnRollDice{ 
+    margin-top: 350px;
 
-    top: 400px;
-    left:430px;
-    font-weight: 200;
 
 }
 
-#btnHold{
-    top: 450px;
-    left:440px;
+.btnHold{
+    margin-top: 390px;
     font-weight: 200;
 
 }
@@ -82,24 +93,29 @@ button:focus {
 
 .initGame{
 
-    position: absolute;
-    top:70px;
-    left: 410px;
+    margin-top: 20px;
+
     font-weight: 200;
 }
-.players-title{
-    font-family: 'Lato', sans-serif;
-    font-size:30px;
-    font-weight: 300;
+i {
+    color: #EB4D4D;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 10px;
 
-   
+    line-height: 1;
+    vertical-align: text-top;
+    margin-top: -4px;
+    transition: margin 0.3s;
 }
+
 
 .globalScore{
-    font-family: 'Lato', sans-serif;
+
     font-size:80px;
-    font-weight: 200;
+    font-weight: 100;
     color: rgb(179, 54, 54);
+    margin-top: 50px;
 
 }
 
