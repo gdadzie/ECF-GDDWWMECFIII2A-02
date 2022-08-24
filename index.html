@@ -2,47 +2,61 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Dynamiser vos site web avec Javascript</title>
         <link rel="stylesheet" href="style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
+       
     </head>
     <body>
-        <div class="container interfaceGame"> 
-            <!----->
+        <div class="container clearfix interfaceGame"> 
+           
 
             <div class="row text-center interfacePlayers  ">
 
-                    <div class=" col-sm-6 col-lg-6 interface0 interfacePlayer active">
+                    <div class=" col-6 interface0 interfacePlayer active">
                         <div id="players-title0" class="players-title mt-5">PLAYER 1</div>
                         <div id="globalScore0" class="globalScore p-5">0</div>
-                        <div class="current mt-5  container w-50">CURRENT
-                        <div id="roundScore0" class="roundScore">0</div></div>
+                        <div class="current-content">
+                            <div class="currentTitle">Current</div>
+                            <div id="roundScore0" class="roundScore">0</div>
+                        </div>
                     </div>
 
-                    <div class="col-sm-6 h-100 interface1 interfacePlayer ">
+                    <div class="col-1">
+
+                        <div class="initGame"><button  id="initGame" ><i class="bi bi-plus-circle"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                          </svg></i>NEW GAME</button></div>
+                        <div><img id="diceDisplay" class="diceDisplay"  src="dice-1.png" alt=""/></div>      
+                        <div class=" btnRollDice"><button id="btnRollDice"><i class="bi bi-arrow-repeat"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                          </svg></i>ROLL DICE</button></div>
+                        
+                        <div class="btnHold"><button id="btnHold"><i class="bi bi-box-arrow-in-down"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-box-arrow-in-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+                            <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                          </svg></i>HOLD</button></div>
+
+                    </div>
+
+                    <div class="col-5 h-100 interface1 interfacePlayer ">
                         <div  id="players-title1" class="players-title mt-5 ">PLAYER 2</div>
                         <div id="globalScore1" class="globalScore p-5">0</div>
-                        <div class="container mt-5 current w-50 ">CURRENT
-                        <div id="roundScore1" class="roundScore">0</div></div>
-                    </div>
-                    
-                    <!---
-                    <img class="rollDice " src="images/rollDice.svg">-->
-                    <div class="features">
-
-                        <button  id="initGame" class="  initGame"> + NEW GAME</button>
-                        <img id="diceDisplay" class="diceDisplay " src="" alt="">
-                        <button id="btnRollDice">ROLL DICE</button>
-                        <button id="btnHold">HOLD</button>
-
+                        <div class="current-content">
+                            <div class="currentTitle">Current</div>
+                            <div id="roundScore1" class="roundScore">0</div>
+                        </div>
                     </div>
 
+              
 
             </div>  
         </div>
-        <script type="text/javascript" src="main.js"></script>
+        <script  src="main.js"></script>
     </body>
-</html>
+</html> 
